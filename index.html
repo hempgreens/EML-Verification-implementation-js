@@ -1,0 +1,120 @@
+<html>
+<head>
+  <title>EML - js</title>
+  <script src="./complex.js"></script>
+  <script src="./emltree.js"></script>
+  <script>
+    window.onload = () => {
+      setFnBtnCallbacks();
+      setAnswers();
+    };
+    function setFnBtnCallbacks(){
+      document.getElementById('x1').onchange = setAns1;
+      document.getElementById('x3').onchange = setAns3;
+      document.getElementById('x4').onchange = setAns4;
+      document.getElementById('x5').onchange = setAns5;
+      document.getElementById('x6').onchange = setAns6;
+      document.getElementById('x7').onchange = setAns7;
+      document.getElementById('y7').onchange = setAns7;
+      document.getElementById('x8').onchange = setAns8;
+      document.getElementById('y8').onchange = setAns8;
+    }
+    function setAnswers() {
+      setAns1();
+      setAns2();
+      setAns3();
+      setAns4();
+      setAns5();
+      setAns6();
+      setAns7();
+      setAns8();
+    }
+    const X = (n) => Number(document.getElementById(`x${n}`).value);
+    const Y = (n) => Number(document.getElementById(`y${n}`).value);
+    function setAns1() {
+      document.getElementById('ans1').innerText = exp(X(1));
+    }
+    function setAns2() {
+      document.getElementById('ans2').innerText = E();
+    }
+    function setAns3() {
+      document.getElementById('ans3').innerText = ln(X(3));
+    }
+    function setAns4() {
+      document.getElementById('ans4').innerText = id(X(4));
+    }
+    function setAns5() {
+      document.getElementById('ans5').innerText = invert(X(5));
+    }
+    function setAns6() {
+      document.getElementById('ans6').innerText = reciprocal(X(6));
+    }
+    function setAns7() {
+      document.getElementById('ans7').innerText = multiplication(X(7), Y(7));
+    }
+    function setAns8() {
+      document.getElementById('ans8').innerText = division(X(8), Y(8));
+    }
+  </script>
+  <style>
+    input[type="number"] {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    
+  </div>
+  <div>
+    <span>exp(</span>
+    <input type="number" id="x1" value="5">
+    <span>) = </span>
+    <span id="ans1"></span>
+  </div>
+  <div>
+    <span>E = </span>
+    <span id="ans2"></span>
+  </div>
+  <div>
+    <span>ln(</span>
+    <input type="number" id="x3" value="123">
+    <span>) = </span>
+    <span id="ans3"></span>
+  </div>
+  <div>
+    <span>id(</span>
+    <input type="number" id="x4" value="123">
+    <span>) = </span>
+    <span id="ans4"></span>
+  </div>
+  <div>
+    <span>invert(</span>
+    <input type="number" id="x5" value="123">
+    <span>) = </span>
+    <span id="ans5"></span>
+  </div>
+  <div>
+    <span>reciprocal(</span>
+    <input type="number" id="x6" value="100">
+    <span>) = </span>
+    <span id="ans6"></span>
+  </div>
+  <div>
+    <span>multiplication(</span>
+    <input type="number" id="x7" value="100">
+    <span>,</span>
+    <input type="number" id="y7" value="36">
+    <span>) = </span>
+    <span id="ans7"></span>
+  </div>
+  <div>
+    <span>division(</span>
+    <input type="number" id="x8" value="200">
+    <span>,</span>
+    <input type="number" id="y8" value="8">
+    <span>) = </span>
+    <span id="ans8"></span>
+  </div>
+</body>
+</html>
